@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivi de colis</title>
+</head>
+
+<body>
+  <h1>Suivi de votre colis</h1>
+
+  <p>Entrez votre numéro de suivi :</p>
+
+  <input type="text" id="numero" placeholder="Exemple : COLIS123456">
+
+  <button onclick="suivreColis()">Suivre mon colis</button>
+
+  <div id="resultat"></div>
+
+  <script>
+    function suivreColis() {
+      const numero = document.getElementById("numero").value.trim();
+      const resultat = document.getElementById("resultat");
+
+      if (numero === "") {
+        resultat.innerHTML = "<p>Veuillez entrer un numéro de suivi.</p>";
+        return;
+      }
+
+      resultat.innerHTML = `
+        <h2>Informations du colis</h2>
+        <p><strong>Numéro :</strong> ${numero}</p>
+        <p><strong>Statut :</strong> Colis enregistré</p>
+        <p><strong>Transport :</strong> En préparation</p>
+      `;
+    }
+  </script>
+</body>
+</html>
